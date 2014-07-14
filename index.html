@@ -1,3 +1,77 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <!-- <title>flask+d3 Hello World</title> -->
+  <title>My Webpage</title>
+  <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+<style>
+  .node {
+  stroke: #fff;
+  stroke-width: 1.5px;
+  }
+  .link {
+  stroke: #999;
+  stroke-opacity: .6;
+  }
+</style>
 
-<!-- saved from url=(0027)http://54.186.222.226:8000/ -->
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></head><body><div class="webkit-line-gutter-backdrop"></div><table><tbody><tr><td class="webkit-line-number" value="1"></td><td class="webkit-line-content"><span class="webkit-html-doctype">&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"&gt;</span></td></tr><tr><td class="webkit-line-number" value="2"></td><td class="webkit-line-content"><span class="webkit-html-tag">&lt;html <span class="webkit-html-attribute-name">lang</span>="<span class="webkit-html-attribute-value">en</span>"&gt;</span></td></tr><tr><td class="webkit-line-number" value="3"></td><td class="webkit-line-content"><span class="webkit-html-tag">&lt;head&gt;</span></td></tr><tr><td class="webkit-line-number" value="4"></td><td class="webkit-line-content"><span class="webkit-html-tag">&lt;meta <span class="webkit-html-attribute-name">http-equiv</span>="<span class="webkit-html-attribute-value">content-type</span>" <span class="webkit-html-attribute-name">content</span>="<span class="webkit-html-attribute-value">text/html; charset=utf-8</span>"&gt;</span></td></tr><tr><td class="webkit-line-number" value="5"></td><td class="webkit-line-content">  <span class="webkit-html-comment">&lt;!-- &lt;title&gt;flask+d3 Hello World&lt;/title&gt; --&gt;</span></td></tr><tr><td class="webkit-line-number" value="6"></td><td class="webkit-line-content">  <span class="webkit-html-tag">&lt;title&gt;</span>My Webpage<span class="webkit-html-tag">&lt;/title&gt;</span></td></tr><tr><td class="webkit-line-number" value="7"></td><td class="webkit-line-content">  <span class="webkit-html-tag">&lt;script <span class="webkit-html-attribute-name">src</span>="<a class="webkit-html-attribute-value webkit-html-resource-link" target="_blank" href="http://d3js.org/d3.v3.min.js">http://d3js.org/d3.v3.min.js</a>" <span class="webkit-html-attribute-name">charset</span>="<span class="webkit-html-attribute-value">utf-8</span>"&gt;</span><span class="webkit-html-tag">&lt;/script&gt;</span></td></tr><tr><td class="webkit-line-number" value="8"></td><td class="webkit-line-content"><span class="webkit-html-tag">&lt;style&gt;</span></td></tr><tr><td class="webkit-line-number" value="9"></td><td class="webkit-line-content">  .node {</td></tr><tr><td class="webkit-line-number" value="10"></td><td class="webkit-line-content">  stroke: #fff;</td></tr><tr><td class="webkit-line-number" value="11"></td><td class="webkit-line-content">  stroke-width: 1.5px;</td></tr><tr><td class="webkit-line-number" value="12"></td><td class="webkit-line-content">  }</td></tr><tr><td class="webkit-line-number" value="13"></td><td class="webkit-line-content">  .link {</td></tr><tr><td class="webkit-line-number" value="14"></td><td class="webkit-line-content">  stroke: #999;</td></tr><tr><td class="webkit-line-number" value="15"></td><td class="webkit-line-content">  stroke-opacity: .6;</td></tr><tr><td class="webkit-line-number" value="16"></td><td class="webkit-line-content">  }</td></tr><tr><td class="webkit-line-number" value="17"></td><td class="webkit-line-content"><span class="webkit-html-tag">&lt;/style&gt;</span></td></tr><tr><td class="webkit-line-number" value="18"></td><td class="webkit-line-content"><br></td></tr><tr><td class="webkit-line-number" value="19"></td><td class="webkit-line-content"><span class="webkit-html-tag">&lt;/head&gt;</span></td></tr><tr><td class="webkit-line-number" value="20"></td><td class="webkit-line-content"><span class="webkit-html-tag">&lt;body&gt;</span></td></tr><tr><td class="webkit-line-number" value="21"></td><td class="webkit-line-content">  <span class="webkit-html-tag">&lt;h1&gt;</span>Graph of caller to calle<span class="webkit-html-tag">&lt;/h1&gt;</span></td></tr><tr><td class="webkit-line-number" value="22"></td><td class="webkit-line-content"> <span class="webkit-html-tag">&lt;script&gt;</span></td></tr><tr><td class="webkit-line-number" value="23"></td><td class="webkit-line-content">    var width = 1200,</td></tr><tr><td class="webkit-line-number" value="24"></td><td class="webkit-line-content">        height = 600;</td></tr><tr><td class="webkit-line-number" value="25"></td><td class="webkit-line-content"><br></td></tr><tr><td class="webkit-line-number" value="26"></td><td class="webkit-line-content">    var color = d3.scale.category20();</td></tr><tr><td class="webkit-line-number" value="27"></td><td class="webkit-line-content"><br></td></tr><tr><td class="webkit-line-number" value="28"></td><td class="webkit-line-content">    var force = d3.layout.force()</td></tr><tr><td class="webkit-line-number" value="29"></td><td class="webkit-line-content">        .charge(-20)</td></tr><tr><td class="webkit-line-number" value="30"></td><td class="webkit-line-content">        .linkDistance(50)</td></tr><tr><td class="webkit-line-number" value="31"></td><td class="webkit-line-content">        .size([width, height]);</td></tr><tr><td class="webkit-line-number" value="32"></td><td class="webkit-line-content"><br></td></tr><tr><td class="webkit-line-number" value="33"></td><td class="webkit-line-content">    var svg = d3.select("body").append("svg")</td></tr><tr><td class="webkit-line-number" value="34"></td><td class="webkit-line-content">        .attr("width", width)</td></tr><tr><td class="webkit-line-number" value="35"></td><td class="webkit-line-content">        .attr("height", height);</td></tr><tr><td class="webkit-line-number" value="36"></td><td class="webkit-line-content">    svg.text("Graph of:").select("body");</td></tr><tr><td class="webkit-line-number" value="37"></td><td class="webkit-line-content"><br></td></tr><tr><td class="webkit-line-number" value="38"></td><td class="webkit-line-content">    var callback = function (graph) {</td></tr><tr><td class="webkit-line-number" value="39"></td><td class="webkit-line-content">      force</td></tr><tr><td class="webkit-line-number" value="40"></td><td class="webkit-line-content">          .nodes(graph.nodes)</td></tr><tr><td class="webkit-line-number" value="41"></td><td class="webkit-line-content">          .links(graph.links)</td></tr><tr><td class="webkit-line-number" value="42"></td><td class="webkit-line-content">          .start();</td></tr><tr><td class="webkit-line-number" value="43"></td><td class="webkit-line-content"><br></td></tr><tr><td class="webkit-line-number" value="44"></td><td class="webkit-line-content">      var link = svg.selectAll(".link")</td></tr><tr><td class="webkit-line-number" value="45"></td><td class="webkit-line-content">          .data(graph.links)</td></tr><tr><td class="webkit-line-number" value="46"></td><td class="webkit-line-content">          .enter().append("line")</td></tr><tr><td class="webkit-line-number" value="47"></td><td class="webkit-line-content">          .attr("class", "link")</td></tr><tr><td class="webkit-line-number" value="48"></td><td class="webkit-line-content">          .style("stroke-width", function(d) { return Math.sqrt(d.value); });</td></tr><tr><td class="webkit-line-number" value="49"></td><td class="webkit-line-content"><br></td></tr><tr><td class="webkit-line-number" value="50"></td><td class="webkit-line-content">      link.append("title")</td></tr><tr><td class="webkit-line-number" value="51"></td><td class="webkit-line-content">          .text(function(d) { return "source: (" + d.source.x+", "+d.source.y+")" + ", target:"+d.target; });</td></tr><tr><td class="webkit-line-number" value="52"></td><td class="webkit-line-content"><br></td></tr><tr><td class="webkit-line-number" value="53"></td><td class="webkit-line-content">      var node = svg.selectAll(".node")</td></tr><tr><td class="webkit-line-number" value="54"></td><td class="webkit-line-content">          .data(graph.nodes)</td></tr><tr><td class="webkit-line-number" value="55"></td><td class="webkit-line-content">          .enter().append("circle")</td></tr><tr><td class="webkit-line-number" value="56"></td><td class="webkit-line-content">          .attr("class", "node")</td></tr><tr><td class="webkit-line-number" value="57"></td><td class="webkit-line-content">          .attr("r", 10)</td></tr><tr><td class="webkit-line-number" value="58"></td><td class="webkit-line-content">          .style("fill", function(d) { return color(d.group); })</td></tr><tr><td class="webkit-line-number" value="59"></td><td class="webkit-line-content">          .call(force.drag);</td></tr><tr><td class="webkit-line-number" value="60"></td><td class="webkit-line-content"><br></td></tr><tr><td class="webkit-line-number" value="61"></td><td class="webkit-line-content"><br></td></tr><tr><td class="webkit-line-number" value="62"></td><td class="webkit-line-content"><br></td></tr><tr><td class="webkit-line-number" value="63"></td><td class="webkit-line-content"><br></td></tr><tr><td class="webkit-line-number" value="64"></td><td class="webkit-line-content">      force.on("tick", function() {</td></tr><tr><td class="webkit-line-number" value="65"></td><td class="webkit-line-content">        link.attr("x1", function(d) { return d.source.x; })</td></tr><tr><td class="webkit-line-number" value="66"></td><td class="webkit-line-content">            .attr("y1", function(d) { return d.source.y; })</td></tr><tr><td class="webkit-line-number" value="67"></td><td class="webkit-line-content">            .attr("x2", function(d) { return d.target.x; })</td></tr><tr><td class="webkit-line-number" value="68"></td><td class="webkit-line-content">            .attr("y2", function(d) { return d.target.y; });</td></tr><tr><td class="webkit-line-number" value="69"></td><td class="webkit-line-content"><br></td></tr><tr><td class="webkit-line-number" value="70"></td><td class="webkit-line-content">        node.attr("cx", function(d) { return d.x; })</td></tr><tr><td class="webkit-line-number" value="71"></td><td class="webkit-line-content">            .attr("cy", function(d) { return d.y; });</td></tr><tr><td class="webkit-line-number" value="72"></td><td class="webkit-line-content">      });</td></tr><tr><td class="webkit-line-number" value="73"></td><td class="webkit-line-content">    };</td></tr><tr><td class="webkit-line-number" value="74"></td><td class="webkit-line-content">    d3.json("/data", callback);</td></tr><tr><td class="webkit-line-number" value="75"></td><td class="webkit-line-content">  <span class="webkit-html-tag">&lt;/script&gt;</span></td></tr><tr><td class="webkit-line-number" value="76"></td><td class="webkit-line-content"><span class="webkit-html-tag">&lt;/body&gt;</span></td></tr><tr><td class="webkit-line-number" value="77"></td><td class="webkit-line-content"><span class="webkit-html-tag">&lt;/html&gt;</span><span class="webkit-html-end-of-file"></span></td></tr></tbody></table></body></html>
+</head>
+<body>
+  <h1>Graph of caller to calle</h1>
+ <script>
+    var width = 1200,
+        height = 600;
+
+    var color = d3.scale.category20();
+
+    var force = d3.layout.force()
+        .charge(-20)
+        .linkDistance(50)
+        .size([width, height]);
+
+    var svg = d3.select("body").append("svg")
+        .attr("width", width)
+        .attr("height", height);
+    svg.text("Graph of:").select("body");
+
+    var callback = function (graph) {
+      force
+          .nodes(graph.nodes)
+          .links(graph.links)
+          .start();
+
+      var link = svg.selectAll(".link")
+          .data(graph.links)
+          .enter().append("line")
+          .attr("class", "link")
+          .style("stroke-width", function(d) { return Math.sqrt(d.value); });
+
+      link.append("title")
+          .text(function(d) { return "source: (" + d.source.x+", "+d.source.y+")" + ", target:"+d.target; });
+
+      var node = svg.selectAll(".node")
+          .data(graph.nodes)
+          .enter().append("circle")
+          .attr("class", "node")
+          .attr("r", 10)
+          .style("fill", function(d) { return color(d.group); })
+          .call(force.drag);
+
+
+
+
+      force.on("tick", function() {
+        link.attr("x1", function(d) { return d.source.x; })
+            .attr("y1", function(d) { return d.source.y; })
+            .attr("x2", function(d) { return d.target.x; })
+            .attr("y2", function(d) { return d.target.y; });
+
+        node.attr("cx", function(d) { return d.x; })
+            .attr("cy", function(d) { return d.y; });
+      });
+    };
+    d3.json("/data.json", callback);
+  </script>
+</body>
+</html>
